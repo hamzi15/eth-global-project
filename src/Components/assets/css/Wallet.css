@@ -1,0 +1,43 @@
+.Wallet{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    
+   
+    
+    border: 1px solid #1B4266;
+    background-color: #041c31;
+    
+    margin:0px;
+    width: 100%;
+    height: 230vh;
+}
+
+
+
+.public{
+    display: flex;
+    color:rgba(247, 204, 17, 0.815);
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 20px;
+    font-size: 14px;
+    background-image: url("../../assets/images/Card.PNG");
+    width: 375px;
+    height: 275px;
+    background-size: 400px 300px;
+    border-radius: 10px;
+} 
+.Wallet_Container{
+    display: flex;
+    color:white;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 20px;
+    font-size: 14px;
+    background-color: #1B4266;
+    width: 80%;
+    height: 80px;
+    border-bottom: 1px solid #041c31;
+   
+}

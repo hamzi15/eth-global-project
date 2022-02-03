@@ -1,0 +1,135 @@
+.chat{
+    display:flex;
+    flex:.8;
+    flex-direction: column;
+    min-width: 160px;
+    
+    
+    /* background-color: white; */
+}
+.chat__header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #1B4266;
+}
+
+.chat__headerInfo{
+    flex:1;
+    padding-left: 20px;
+}
+
+.chat__headerInfo > h3{
+    margin-bottom:3px;
+    font-weight: 500;
+}
+
+.chat__headerInfo > p{
+    color: gray;
+}
+
+
+
+.chat__body{
+    flex:1;
+    background-image: url("../../assets/images/Backgroud_texture.PNG");
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+    aspect-ratio: initial;
+    
+    background-color: transparent;
+    padding: 30px;
+    overflow: scroll;
+}
+
+.chat__message{
+    position: relative;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: #1B4266;
+    
+    margin-bottom: 30px;
+}
+.chat__recevier{
+    margin-left: auto;
+    background-color: #FADC0F;
+}
+.chat__name{
+    position: absolute;
+    top: -15px;
+    font-weight: 800;
+    font-size: xx-small;
+}
+.chat__timestamp{
+    margin-left: 10px;
+    font-size: xx-small;
+}
+.chat__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height: 62px;
+    min-width: 160px;
+    border-left: 1px solid #1B4266;
+    border-top: 1px solid #1B4266;border-bottom: 1px solid #1B4266;
+    background-color: #041c31;
+    color: #1B4266;
+}
+
+.chat__footer > form{
+    flex: 1;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    
+}
+
+.chat__footer>form>input{
+    flex:1;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    width: 40px;
+}
+/* this will keep the functionality of the button but will not display it */
+.chat__footer>form>button{
+    display:none; 
+   
+}
+.icon{
+    position:relative;
+    display:block;
+    line-height:75px;
+    font-size: 1.6em;
+    text-align: center;
+    transition: 0.5s;
+    color:#a8b3bd;
+    cursor: pointer;
+
+}
+.icon:hover{
+    filter: brightness(.5);
+}
+
+
+
+.list{display: flex;
+    background:#FADC0F;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    margin-top: -150px;
+margin-left: -80px;
+border-radius: 50%;
+
+
+
+
+
+}
