@@ -60,7 +60,7 @@ function Chat() {
                     Hey guys
                     <span className='chat__timestamp'>3.32pm</span>
                 </p>
-                {curr &&( <motion.div><Send initial={{scale:0}} animate={{scale:1}}/></motion.div>)}
+                {curr &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:2}}}><Send /></motion.div>)}
             </div>
             <div className='chat__footer'>
                 
