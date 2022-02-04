@@ -1,0 +1,25 @@
+.d{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    
+
+   border-radius: 10px;
+   
+    background-color:  rgb(253, 191, 253);
+    background-image:
+    linear-gradient(
+      to top right, 
+      rgb(253, 191, 253), #f06d06
+    );
+    
+    margin:0px;
+    width: 100%;
+    height: 130vh;
+}
+.Pub_Container{
+    margin:0 auto
+}
+*:focus{
+    outline: none;
+}

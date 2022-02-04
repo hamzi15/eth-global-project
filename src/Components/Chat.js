@@ -11,9 +11,11 @@ import { BsCurrencyExchange } from 'react-icons/bs';
 import { BsFileEarmark} from 'react-icons/bs';
 import Send from './Send';
 import { motion } from 'framer-motion';
+import { BsArrowLeftRight } from 'react-icons/bs';
+import NFT from './NFTport';
 
 
-
+import D from './d';
 
 import { BiSend } from 'react-icons/bi';
 import "./assets/css/Chat.css";
@@ -23,14 +25,22 @@ function Chat() {
     const [seed, setSeed] = useState('');
     const [modal, setModal] = useState(false);
     const [curr, setCurr] = useState(false);
+    const [nft, setNft] = useState(false);
+    const toggleNft = () => {
+        console.log("clicked")
+        setNft(!nft);
+        setCurr(false)
+    };
     const toggleCurr = () => {
         console.log("clicked")
         setCurr(!curr);
+        setNft(false)
     };
     const toggleModal = () => {
         console.log("clicked")
         setModal(!modal);
         setCurr(false);
+        setNft(false);
     };
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000))
@@ -60,7 +70,8 @@ function Chat() {
                     Hey guys
                     <span className='chat__timestamp'>3.32pm</span>
                 </p>
-                {curr &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:2}}}><Send /></motion.div>)}
+                {curr  && ( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><D/></motion.div>)}
+                {nft  &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><NFT/></motion.div>)}
             </div>
             <div className='chat__footer'>
                 
@@ -80,12 +91,12 @@ function Chat() {
                         
                         <motion.li className='list' initial={{opacity:0,y:30}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>
                             <a>
-                                <span><BsCardImage className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}/></span><span></span>
+                                <span><BsCardImage className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}onClick={toggleNft}/></span><span></span>
                             </a>
                         </motion.li>
                         <motion.li className='list'initial={{opacity:0,y:50}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>
                             <a>
-                                <span><BsFileEarmark className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}/></span><span></span>
+                                <span><BsArrowLeftRight className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}/></span><span></span>
                             </a>
                         </motion.li>
                         <motion.li className='list' initial={{opacity:0,y:100}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>

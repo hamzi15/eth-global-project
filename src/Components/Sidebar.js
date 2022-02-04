@@ -84,19 +84,19 @@ export default function Sidebar() {
     textAlign:"center",
     justifyContent: "space-between"
     ,paddingTop:"20px",marginRight:"-30%",padding:"auto",marginLeft:"8%"}}>
-    <div style={{paddingLeft: "10px",gridColumn:"1",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"white",borderColor:"black",height: "50px",
+    <div style={{paddingLeft: "10px",gridColumn:"1",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"#a8b3bd",borderColor:"black",height: "50px",
   width: "40px",
   
   borderRadius: "50%"
   }}>
     <BsWallet2  size={20}  style={{paddingRight:"7px",paddingTop:"14px"}}/><div style={{paddingTop:"20px",marginLeft:"-3px",fontSize:"13px"}}>Wallet</div></div>
-    <div style={{paddingLeft: "10px",gridColumn:"2",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"white",borderColor:"black",height: "50px",
+    <div style={{paddingLeft: "10px",gridColumn:"2",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"#a8b3bd",borderColor:"black",height: "50px",
   width: "40px",
   
   borderRadius: "50%"
   }}>
     <BsDownload size={20}  style={{paddingRight:"7px",paddingTop:"14px"}}/><div style={{paddingTop:"20px",marginLeft:"-9px",fontSize:"13px"}}>Receive</div></div>
-    <div style={{paddingLeft: "10px",gridColumn:"3",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"white",borderColor:"black",height: "50px",
+    <div style={{paddingLeft: "10px",gridColumn:"3",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"#a8b3bd",borderColor:"black",height: "50px",
   width: "40px",
   
   borderRadius: "50%"
