@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 import { BsArrowLeftRight } from 'react-icons/bs';
 import NFT from './NFTport';
 
-
+import Super from './SuperFluid';
 import D from './d';
 
 import { BiSend } from 'react-icons/bi';
@@ -26,15 +26,24 @@ function Chat() {
     const [modal, setModal] = useState(false);
     const [curr, setCurr] = useState(false);
     const [nft, setNft] = useState(false);
+    const [sup, setSup] = useState(false);
+    const toggleSup = () => {
+        console.log("clicked")
+        setSup(!sup);
+        setCurr(false)
+        setNft(false)
+    };
     const toggleNft = () => {
         console.log("clicked")
         setNft(!nft);
-        setCurr(false)
+        setCurr(false);
+        setSup(false);
     };
     const toggleCurr = () => {
         console.log("clicked")
         setCurr(!curr);
-        setNft(false)
+        setNft(false);
+        setSup(false);
     };
     const toggleModal = () => {
         console.log("clicked")
@@ -72,6 +81,7 @@ function Chat() {
                 </p>
                 {curr  && ( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><D/></motion.div>)}
                 {nft  &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><NFT/></motion.div>)}
+                {sup  &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><Super/></motion.div>)}
             </div>
             <div className='chat__footer'>
                 
@@ -96,7 +106,7 @@ function Chat() {
                         </motion.li>
                         <motion.li className='list'initial={{opacity:0,y:50}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>
                             <a>
-                                <span><BsArrowLeftRight className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}/></span><span></span>
+                                <span><BsArrowLeftRight className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}onClick={toggleSup}/></span><span></span>
                             </a>
                         </motion.li>
                         <motion.li className='list' initial={{opacity:0,y:100}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>

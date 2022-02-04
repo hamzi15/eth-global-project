@@ -1,0 +1,25 @@
+.Super{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    
+
+   border-radius: 10px;
+   
+    background-color:  White;
+    
+    
+    margin:0px;
+    width: 100%;
+    height: 130vh;
+}
+.Pub_Container{
+    margin:0 auto
+}
+*:focus{
+    outline: none;
+}
+.in{
+    border-color: linear-gradient(to top right,red, #f06d06);
+    color: #af9e7f;
+}
