@@ -27,21 +27,41 @@ export default function AssetSelector({ setAsset, style }) {
     setAsset(token);
   }
 
+  const formatAsset = (item) => {
+    let balance;
+    if (item.balance !== undefined){
+      balance = parseFloat(
+        Moralis?.Units?.FromWei(item.balance, item.decimals),
+      )?.toFixed(6)
+    } else {
+      balance = "0"
+    }
+    return `${item.symbol} ${balance}`
+  }
+
   return (
-    <select onChange={handleChange} size="large" style={style}>
+    <select size="large" style={style}>
        <option
               value="token"
               
             >select</option>
       {fullBalance &&
         fullBalance.map((item) => {
-          console.log(item);
           return (
             <option
-              value={item["token_address"]}
-              key={item["token_address"]}
-            >
-              <div
+              onChange={handleChange(item)}
+              value={item.token_address}
+              key={item.token_address}
+            >{formatAsset(item)}
+            </option>
+          );
+        })}
+    </select>
+  );
+}
+
+
+/*<div
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -56,30 +76,10 @@ export default function AssetSelector({ setAsset, style }) {
                     justifyContent: "space-between",
                     width: "90%",
                   }}
-                > <img
-                src={
-                  item.logo ||
-                  "https://etherscan.io/images/main/empty-token.png"
-                }
-                alt="nologo"
-                width="24px"
-                height="24px"
-                preview={false}
-                style={{ borderRadius: "15px" }}
-              />
-                  <p>{item.symbol}</p>
+                >
+                  <p>{item.balance}</p>
                   <p style={{ alignSelf: "right" }}>
-                    (
-                    {parseFloat(
-                      Moralis?.Units?.FromWei(item.balance, item.decimals),
-                    )?.toFixed(6)}
-                    )
+                   Hello
                   </p>
                 </div>
-              </div>
-            </option>
-          );
-        })}
-    </select>
-  );
-}
+              </div> */

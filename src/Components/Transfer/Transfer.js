@@ -53,6 +53,7 @@ function Transfer() {
 
   useEffect(() => {
     asset && amount && receiver ? setTx({ amount, receiver, asset }) : setTx();
+    console.log(asset, amount, receiver)
   }, [asset, amount, receiver]);
 
   const openNotification = ({ message, description }) => {
