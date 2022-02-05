@@ -27,16 +27,17 @@ export default function Sidebar() {
   console.log(account, rooms, isAuthenticated)
 
   let navigate = useNavigate()
-
+  let text = ""
 
   useEffect(()=>{
     if(isAuthenticated){
-      let text = account.substring(0,6)+". . ."
+      if (account !== null) text = account.substring(0,6)+". . ."
+      else text = ""
       setAddressText(text)
     } else {
       navigate('/login')
     }
-  },[])
+  },[account])
 
   //const address = "0x066Adead2d82A1C2700b4B48ee82ec952b6b18dA"
 

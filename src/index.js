@@ -11,11 +11,11 @@ const SERVER_ID = process.env.SERVER_ID || 'https://o0xjvjekaxju.usemoralis.com:
 console.log(APP_ID,SERVER_ID)
 
 ReactDOM.render(
-  <MoralisProvider appId={APP_ID} serverUrl={SERVER_ID}>
   <React.StrictMode>
+  <MoralisProvider appId={APP_ID} serverUrl={SERVER_ID}>
     <App />
-  </React.StrictMode>
-  </MoralisProvider>,
+  </MoralisProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

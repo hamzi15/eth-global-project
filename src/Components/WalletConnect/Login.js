@@ -8,20 +8,15 @@ const Login = () => {
     let navigate = useNavigate()
 
     useEffect(()=> {
-      const connectorId = window.localStorage.getItem("connectorId");
+      //const connectorId = window.localStorage.getItem("connectorId");
       if (isAuthenticated){
-        //navigate('/')
+        navigate('/')
       }
     },[isAuthenticated])
 
     const handleLogin = () => {
       authenticate()
-      if (isAuthenticated) {
-        navigate('/')
-      }
     }
-
-
 
     return (
        <Container 

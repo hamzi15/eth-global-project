@@ -24,8 +24,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/login" element={<Login/>}/>
-      {isAuthenticated && 
-      <Route path="/" element={<UI/>}/>}
+      <Route path="/" element={<UI/>}/>
     </Routes>
     </BrowserRouter>
   );
