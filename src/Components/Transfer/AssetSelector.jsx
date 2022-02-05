@@ -22,9 +22,9 @@ export default function AssetSelector({ setAsset, style }) {
     ];
   }, [assets, nativeBalance, nativeToken]);
 
-  function handleChange(value) {
-    const token = fullBalance.find((token) => token.token_address === value);
-    setAsset(token);
+  function handleChange(e) {
+    const token = fullBalance.find((token) => token.token_address === e.target.value);
+    setAsset(token); 
   }
 
   const formatAsset = (item) => {
@@ -40,7 +40,7 @@ export default function AssetSelector({ setAsset, style }) {
   }
 
   return (
-    <select size="large" style={style}>
+    <select onChange={handleChange} size="large" style={style}>
        <option
               value="token"
               
@@ -49,7 +49,6 @@ export default function AssetSelector({ setAsset, style }) {
         fullBalance.map((item) => {
           return (
             <option
-              onChange={handleChange(item)}
               value={item.token_address}
               key={item.token_address}
             >{formatAsset(item)}
