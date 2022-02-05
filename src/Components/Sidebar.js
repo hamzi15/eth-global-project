@@ -20,30 +20,32 @@ import { useMoralis } from 'react-moralis';
 import { useNavigate } from 'react-router-dom';
 export default function Sidebar() {
   const {account,isAuthenticated} = useMoralis()
-  //const [address, setAddress] = useState(account)
+  const [addressText, setAddressText] = useState(".........")
   const [rooms, setRooms] = useState([]);
   const [copySuccess, setCopySuccess] = useState('');
 
-  console.log(address, rooms)
+  console.log(account, rooms, isAuthenticated)
 
   let navigate = useNavigate()
 
-  /*
+
   useEffect(()=>{
     if(isAuthenticated){
-      //setAddress(account)
+      let text = account.substring(0,6)+". . ."
+      setAddressText(text)
     } else {
       navigate('/login')
     }
-  },[])*/
+  },[])
 
-  const address = "0x066Adead2d82A1C2700b4B48ee82ec952b6b18dA"
+  //const address = "0x066Adead2d82A1C2700b4B48ee82ec952b6b18dA"
 
+  /*
   function PublicAddress(event){
     const text= address.substring(0,6)+". . ."
     console.log(text)
     return(<>{text}</>)
-    }
+    }*/
 
   const textAreaRef = useRef(null);
   const Settings=(props)=>{
@@ -94,7 +96,7 @@ export default function Sidebar() {
           
          
           style={{overflow:"hidden",width:"100px",color:"white",fontSize:'14px'}}
-        ><PublicAddress/></div></div>
+        >{addressText}</div></div>
       
     <Settings>Hello</Settings>
     <span style={{display: "grid",

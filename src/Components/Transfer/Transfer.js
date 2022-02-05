@@ -49,6 +49,8 @@ function Transfer() {
   const [amount, setAmount] = useState();
   const [isPending, setIsPending] = useState(false);
 
+  console.log(asset);
+
   useEffect(() => {
     asset && amount && receiver ? setTx({ amount, receiver, asset }) : setTx();
   }, [asset, amount, receiver]);

@@ -10,7 +10,7 @@ const Login = () => {
     useEffect(()=> {
       const connectorId = window.localStorage.getItem("connectorId");
       if (isAuthenticated){
-        navigate('/')
+        //navigate('/')
       }
     },[isAuthenticated])
 
