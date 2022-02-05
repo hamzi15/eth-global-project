@@ -25,6 +25,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login/>}/>
       <Route path="/" element={<UI/>}/>
+      <Route path="/wallet" element={<Wallet/>}/>
     </Routes>
     </BrowserRouter>
   );

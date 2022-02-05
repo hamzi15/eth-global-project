@@ -18,6 +18,7 @@ import { BsWallet2 } from 'react-icons/bs';
 import avatar from "./assets/images/Avatar.jpeg";
 import { useMoralis } from 'react-moralis';
 import { useNavigate } from 'react-router-dom';
+import Blockie from './WalletConnect/Blockie';
 export default function Sidebar() {
   const {account,isAuthenticated} = useMoralis()
   const [addressText, setAddressText] = useState(".........")
@@ -39,15 +40,6 @@ export default function Sidebar() {
     }
   },[account])
 
-  //const address = "0x066Adead2d82A1C2700b4B48ee82ec952b6b18dA"
-
-  /*
-  function PublicAddress(event){
-    const text= address.substring(0,6)+". . ."
-    console.log(text)
-    return(<>{text}</>)
-    }*/
-
   const textAreaRef = useRef(null);
   const Settings=(props)=>{
     return(
@@ -66,18 +58,10 @@ export default function Sidebar() {
   
     alert(copySuccess);
   };
-
-  /*useEffect(() => {
-    db.collection('rooms').onSnapshot(snapshot => (
-      setRooms(snapshot.docs.map(doc => (
-        {
-          id: doc.id,
-          data: doc.data(),
-        }
-      )
-      ))
-    ))
-  }, [])*/
+  
+  const walletPage = ()=> {
+    navigate('/wallet')
+  }
 
 
   return (
@@ -85,7 +69,7 @@ export default function Sidebar() {
      
       <div className='sidebar__header'>
       <div className="row g-0" style={{textAlign: "center",paddingLeft: "95px",paddingTop:'30px'}}>
-      <img className="rounded-circle " src={avatar} style={{ gridRowStart:"2", width: "90px",
+      <img className="rounded-circle " src={<Blockie address={account} size={1} />} style={{ gridRowStart:"2", width: "90px",
     height: "90px",
     borderRadius: "50%",
     overflow: "hidden",
@@ -109,7 +93,7 @@ export default function Sidebar() {
   
   borderRadius: "50%"
   }}>
-    <BsWallet2  size={20}  style={{paddingRight:"7px",paddingTop:"14px"}}/><div style={{paddingTop:"20px",marginLeft:"-3px",fontSize:"13px"}}>Wallet</div></div>
+    <BsWallet2  onClick={walletPage} size={20}  style={{paddingRight:"7px",paddingTop:"14px"}}/><div style={{paddingTop:"20px",marginLeft:"-3px",fontSize:"13px"}}>Wallet</div></div>
     <div style={{paddingLeft: "10px",gridColumn:"2",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor:"#1B4266",color:"#a8b3bd",borderColor:"black",height: "50px",
   width: "40px",
   
