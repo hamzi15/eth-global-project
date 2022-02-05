@@ -13,7 +13,7 @@ import Send from './Send';
 import { motion } from 'framer-motion';
 import { BsArrowLeftRight } from 'react-icons/bs';
 import NFT from './NFTport';
-
+import Result from './Transfer/Result';
 import Super from './SuperFluid';
 import D from './d';
 
@@ -32,24 +32,28 @@ function Chat() {
         setSup(!sup);
         setCurr(false)
         setNft(false)
+        setModal(false);
     };
     const toggleNft = () => {
         console.log("clicked")
         setNft(!nft);
         setCurr(false);
         setSup(false);
+        setModal(false);
     };
     const toggleCurr = () => {
         console.log("clicked")
         setCurr(!curr);
         setNft(false);
         setSup(false);
+        setModal(false);
     };
     const toggleModal = () => {
         console.log("clicked")
         setModal(!modal);
         setCurr(false);
         setNft(false);
+        setSup(false);
     };
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000))
@@ -79,7 +83,7 @@ function Chat() {
                     Hey guys
                     <span className='chat__timestamp'>3.32pm</span>
                 </p>
-                {curr  && ( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><D/></motion.div>)}
+                {curr  && ( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><D>x</D></motion.div>)}
                 {nft  &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><NFT/></motion.div>)}
                 {sup  &&( <motion.div initial={{y:450}} animate={{y:0,transition:{duration:.4}}}><Super/></motion.div>)}
             </div>
@@ -99,17 +103,17 @@ function Chat() {
                     {modal &&(
                 <motion.ul animate={{transition:{duration:4.5,delay:.8}}}>
                         
-                        <motion.li className='list' initial={{opacity:0,y:30}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>
+                        <motion.li className='list' initial={{opacity:0,y:30}}animate={{opacity:1,y:0,transition:{duration:.1,delay:.15}}}>
                             <a>
                                 <span><BsCardImage className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}onClick={toggleNft}/></span><span></span>
                             </a>
                         </motion.li>
-                        <motion.li className='list'initial={{opacity:0,y:50}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>
+                        <motion.li className='list'initial={{opacity:0,y:50}}animate={{opacity:1,y:0,transition:{duration:.3,delay:.15}}}>
                             <a>
                                 <span><BsArrowLeftRight className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}onClick={toggleSup}/></span><span></span>
                             </a>
                         </motion.li>
-                        <motion.li className='list' initial={{opacity:0,y:100}}animate={{opacity:1,y:0,transition:{duration:.8,delay:.15}}}>
+                        <motion.li className='list' initial={{opacity:0,y:100}}animate={{opacity:1,y:0,transition:{duration:.3,delay:.15}}}>
                             <a>
                                 <span><BsCurrencyExchange className="icon" style={{color:"#a8b3bd", paddingLeft: "22px"}}onClick={toggleCurr}/></span><span></span>
                             </a>

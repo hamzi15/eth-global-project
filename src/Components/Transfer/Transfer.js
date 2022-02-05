@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useMoralis } from "react-moralis";
 import AddressInput from "./AddressInput";
 import AssetSelector from "./AssetSelector";
+import Result from "./Result";
 
 const styles = {
   card: {
@@ -91,9 +92,9 @@ function Transfer() {
         };
     }
 
-    setIsPending(true);
+    setIsPending(false);
     Moralis.transfer(options)
-    .then(result => console.log(result))
+    .then(result =>  <Result prop={result}/>)
     .catch(err => console.log("here",err))
     /*
     txStatus
@@ -125,43 +126,43 @@ function Transfer() {
   return (
     <div style={styles.card}>
       <div style={styles.tranfer}>
-        <div style={styles.header}>
-          <h3>Transfer Assets</h3>
+        <div style={{padding:"80px", textAlign:"center",color:"white",fontSize:"26px"}}>
+          <h3>TRANSFER ASSETS</h3>
         </div>
         <div style={styles.select}>
-          <div style={styles.textWrapper}>
+          <div style={{padding:"20px", textAlign:"center",color:"white",fontSize:"26px"}}>
             <Text strong>Address:</Text>
           </div>
           <AddressInput autoFocus onChange={setReceiver} />
         </div>
         <div style={styles.select}>
-          <div style={styles.textWrapper}>
+          <div style={{padding:"20px", textAlign:"center",color:"white",fontSize:"26px"}}>
             <Text strong>Amount:</Text>
-          </div>
-          <Input
+          </div><br/><CreditCardOutlined style={{color:"white", padding:"20px"}}/>
+          <input style={{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent'}}
             size="large"
-            prefix={<CreditCardOutlined />}
+           
             onChange={(e) => {
               setAmount(`${e.target.value}`);
             }}
           />
         </div>
         <div style={styles.select}>
-          <div style={styles.textWrapper}>
-            <Text strong>Asset:</Text>
+          <div  style={{padding:"20px", textAlign:"center",color:"white",fontSize:"26px"}}>
+            <Text strong style={{paddingRight:"40px"}} >Asset:</Text>
           </div>
-          <AssetSelector setAsset={setAsset} style={{ width: "100%" }} />
+          <AssetSelector setAsset={setAsset} style={{padding:"40px", width: "200px" }} />
         </div>
-        <Button
-          type="primary"
-          size="large"
+<div style={{display:"flex",paddingTop:"150px",justifyContent:"center"}}>
+        <div
+          
           loading={isPending}
-          style={{ width: "100%", marginTop: "25px" }}
+          style={{ width: "200px", marginTop: "25px",height:"40px", textAlign:"center",borderRadius:"30px",backgroundColor:"white",alignItems:"center",paddingTop:"20px",cursor:"pointer" }}
           onClick={() => transfer()}
           disabled={!tx}
         >
           Transfer💸
-        </Button>
+        </div></div>
       </div>
     </div>
   );

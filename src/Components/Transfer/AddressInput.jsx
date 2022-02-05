@@ -93,7 +93,7 @@ function AddressInput(props) {
             scale={3}
           />
         ) : (
-          <SearchOutlined />
+          <SearchOutlined style={{color:"white",padding:"20px"}}/>
         )
       }
       suffix={validatedAddress && <Cross />}
@@ -110,8 +110,8 @@ function AddressInput(props) {
       style={
         validatedAddress
           ? { ...props?.style, border: "1px solid rgb(33, 191, 150)" }
-          : { ...props?.style }
-      }
+          : { ...props?.style },{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent'
+      }}
     />
   );
 }

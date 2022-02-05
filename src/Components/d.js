@@ -13,11 +13,12 @@ export default function D() {
 
 <div className="d">
 
-<div className="Pub_Container" >
-  
-   
-  <img src={polygon}style={{height:"400px",width:"400px",imageRendering: "high-quality"}}></img>
-  </div>
+
       <Transfer/>
+      <div className="Pub_Container" style={{display:"flex",textAlign:"center",alignItems:"center"}}>
+  
+  <div> Powered by:</div>
+  <img src={polygon}style={{height:"150px",width:"150px",imageRendering: "high-quality", margin:"0 auto"}}></img>
+  </div>
       </div>
 )}
