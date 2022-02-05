@@ -16,22 +16,39 @@ import './assets/fonts/ionicons.min.css'
 import { BsWallet2 } from 'react-icons/bs';
 
 import avatar from "./assets/images/Avatar.jpeg";
+import { useMoralis } from 'react-moralis';
+import { useNavigate } from 'react-router-dom';
 export default function Sidebar() {
-  const address="0xD3998D9993B3310C8F739694C97103A5770dbB2E"
+  const {account,isAuthenticated} = useMoralis()
+  //const [address, setAddress] = useState(account)
+  const [rooms, setRooms] = useState([]);
+  const [copySuccess, setCopySuccess] = useState('');
+
+  console.log(address, rooms)
+
+  let navigate = useNavigate()
+
+  /*
+  useEffect(()=>{
+    if(isAuthenticated){
+      //setAddress(account)
+    } else {
+      navigate('/login')
+    }
+  },[])*/
+
+  const address = "0x066Adead2d82A1C2700b4B48ee82ec952b6b18dA"
+
   function PublicAddress(event){
     const text= address.substring(0,6)+". . ."
     console.log(text)
     return(<>{text}</>)
     }
-  const [rooms, setRooms] = useState([]);
-  console.log(rooms)
-  const [copySuccess, setCopySuccess] = useState('');
+
   const textAreaRef = useRef(null);
   const Settings=(props)=>{
     return(
       <div className='settings-backdrop'>
-       
-        
       </div>
     )
   }
