@@ -92,8 +92,10 @@ function Transfer() {
     }
 
     setIsPending(true);
-    const txStatus = await Moralis.transfer(options);
-
+    Moralis.transfer(options)
+    .then(result => console.log(result))
+    .catch(err => console.log("here",err))
+    /*
     txStatus
       .on("transactionHash", (hash) => {
         openNotification({
@@ -117,7 +119,7 @@ function Transfer() {
         });
         console.error(error);
         setIsPending(false);
-      });
+      });*/
   }
 
   return (
