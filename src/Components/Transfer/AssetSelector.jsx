@@ -28,12 +28,16 @@ export default function AssetSelector({ setAsset, style }) {
   }
 
   return (
-    <Select onChange={handleChange} size="large" style={style}>
+    <select onChange={handleChange} size="large" style={style}>
+       <option
+              value="token"
+              
+            >select</option>
       {fullBalance &&
         fullBalance.map((item) => {
           console.log(item);
           return (
-            <Select.Option
+            <option
               value={item["token_address"]}
               key={item["token_address"]}
             >
@@ -45,24 +49,24 @@ export default function AssetSelector({ setAsset, style }) {
                   gap: "8px",
                 }}
               >
-                <Image
-                  src={
-                    item.logo ||
-                    "https://etherscan.io/images/main/empty-token.png"
-                  }
-                  alt="nologo"
-                  width="24px"
-                  height="24px"
-                  preview={false}
-                  style={{ borderRadius: "15px" }}
-                />
+               
                 <div
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
                     width: "90%",
                   }}
-                >
+                > <img
+                src={
+                  item.logo ||
+                  "https://etherscan.io/images/main/empty-token.png"
+                }
+                alt="nologo"
+                width="24px"
+                height="24px"
+                preview={false}
+                style={{ borderRadius: "15px" }}
+              />
                   <p>{item.symbol}</p>
                   <p style={{ alignSelf: "right" }}>
                     (
@@ -73,9 +77,9 @@ export default function AssetSelector({ setAsset, style }) {
                   </p>
                 </div>
               </div>
-            </Select.Option>
+            </option>
           );
         })}
-    </Select>
+    </select>
   );
 }
