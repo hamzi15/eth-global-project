@@ -41,17 +41,12 @@ export default function NFT() {
     return(
 
 <div className="NFT">
-
-<div className="Pub_Container" >
+<div style={{margin:"0 auto", fontSize:"40px",padding:"40px",fontWeight:"bolder",color:'white'}}> NFT WALLET</div>
+<div className="Pub_Container" style={{padding:"40px"}}>
   
+  {nfts && nfts.map((file)=> <div ><hr/><div style={{margin:'0 auto',fontWeight:"bolder",padding:"20px",color:"white"}}>{file.name}</div><div style={{padding:"20px"}}><img src={file.file_url} style={{height:"90px",width:"90px",imageRendering: "high-quality",borderRadius:'50%'}}></img></div></div>)}
    
-  <img src={nfts && nfts[0].file_url} style={{height:"400px",width:"400px",imageRendering: "high-quality"}}></img>
+ 
   </div>
-  <div className="Pub_Container" style={{backgroundColor:"transparent",color:"black",fontSize:"30px",textAlign:"center"}}> Enter Reciever Address<br/><br/>
-  <input style={{background:"none",boxShadow:"none",border:"none", width:"80%px",fontSize:"26px",backgroundColor:"#af9e7f", color:"white",height:"80px",borderRadius:"30px",boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"}}></input>
-      </div>
       
-      <div className="Pub_Container" style={{margin:"0 auto",backgroundColor:"transparent",color:"black",fontSize:"30px", paddingTop:"100px",textAlign:"center"}}> Enter NFT<br/><br/>
-      <input style={{background:"none",boxShadow:"none",border:"none", width:"80%px",fontSize:"26px",backgroundColor:"#af9e7f", color:"white",height:"80px",borderRadius:"30px",boxShadow: "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset"}}></input>
-      </div>    
       </div>)}
