@@ -13,7 +13,6 @@ const io = require('socket.io')(server, {
     origins: [
       'http://localhost:3000',
       'http://localhost:3001',
-      'https://www.app.sabhi.org',
     ],
     methods: ['GET', 'POST',],
   },
