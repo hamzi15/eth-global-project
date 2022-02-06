@@ -48,7 +48,11 @@ export default function NFT() {
    {nfts===null|| nfts.length===0 &&(
      <div style={{margin:"0 auto", fontSize:"40px",padding:"40px",fontWeight:"bolder",color:'white'}}>Your Wallet Does not contain any NFTS</div>
    ) }
- 
+ <div className="Pub_Container" style={{display:"flex",textAlign:"center",alignItems:"center"}}>
+  
+  <div> Powered by:</div>
+  <img src={polygon}style={{height:"150px",width:"150px",imageRendering: "high-quality", margin:"0 auto"}}></img>
+  </div>
   </div>
       
       </div>)}
