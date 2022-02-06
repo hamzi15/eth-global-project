@@ -19,6 +19,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.18.5",
+    "axios": "^0.25.0",
     "framer-motion": "^6.2.3",
     "grommet-icons": "^4.7.0",
     "grommet-styles": "^0.2.0",

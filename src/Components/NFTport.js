@@ -1,6 +1,6 @@
 import "./assets/css/NFT.css";
 import polygon from "./assets/images/Nftport.svg";
-import {fetch} from "node-fetch"
+import axios from 'axios';
 import { useState } from "react";
 
 export default function NFT() {
@@ -17,21 +17,24 @@ export default function NFT() {
 
 
     const fetchNFTs = () => {
-      let url = `https://api.nftport.xyz/v0/accounts/${address}`;
-
-      let options = {
+      var options = {
         method: 'GET',
-        qs: {chain: 'ethereum'},
+        url: `https://api.nftport.xyz/v0/accounts/${address}`,
+        params: {chain: 'ethereum'},
         headers: {
           'Content-Type': 'application/json',
           Authorization: `${NFT_PORT_AUTH_KEY}`
         }
       };
 
-      fetch(url, options)
-        .then(res => setNFTs((res.json()).nfts))
-        .then(json => console.log(json))
-        .catch(err => console.error('error:' + err));
+      axios.request(options)
+      .then(response => {
+        console.log(response.data)
+        setNFTs(response.data.nfts)
+      })
+      .catch(error=> {
+        console.error(error);
+      });
     }
 
     return(
