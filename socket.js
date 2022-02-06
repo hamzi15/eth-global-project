@@ -15,7 +15,6 @@ module.exports = (io) => {
 
             });
             await chatObj.save();
-            
         });
     });
 };

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/hamzi15/eth-global-project.git",
-  "author": "hamzabinsarfraz <muhammadameerhmza@gmail.com>",
+  "author": "Abdullah Baig",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.849.0",
