@@ -1,6 +1,6 @@
 import "./assets/css/NFT.css";
 import polygon from "./assets/images/Nftport.svg";
-import {} from "node-fetch"
+import {fetch} from "node-fetch"
 import { useState } from "react";
 
 export default function NFT() {
