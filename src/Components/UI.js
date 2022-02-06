@@ -20,11 +20,7 @@ function UI() {
         logout()
         navigate('/login')
       }
-    } else {
-      logout()
-      navigate('/login')
     }
-
   },[account,isAuthenticated])
 
   return (

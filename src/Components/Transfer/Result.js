@@ -6,10 +6,6 @@ export default function Result(prop){
     style={{ display: "flex",
         flexDirection: "column",
         flex:"1",
-        
-    
-    
-       
         backgroundColor:  "White",
         border:"8px solid black",
         

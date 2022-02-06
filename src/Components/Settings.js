@@ -4,6 +4,7 @@ import { BiScan } from 'react-icons/bi';
 import avatar from "./assets/images/Avatar.jpeg";
 import { BsDownload } from 'react-icons/bs';
 export default function Settings() {
+
     const address="0xD3998D9993B3310C8F739694C97103A5770dbB2E"
     function PublicAddress(event){
       const text= address.substring(0,6)+". . ."
