@@ -19,26 +19,13 @@ import avatar from "./assets/images/Avatar.jpeg";
 import { useMoralis } from 'react-moralis';
 import { useNavigate } from 'react-router-dom';
 import Blockie from './WalletConnect/Blockie';
-export default function Sidebar() {
-  const {account,isAuthenticated} = useMoralis()
-  const [addressText, setAddressText] = useState(".........")
+
+
+export default function Sidebar({address}) {
   const [rooms, setRooms] = useState([]);
   const [copySuccess, setCopySuccess] = useState('');
-
-  console.log(account, rooms, isAuthenticated)
-
   let navigate = useNavigate()
-  let text = ""
-
-  useEffect(()=>{
-    if(isAuthenticated){
-      if (account !== null) text = account.substring(0,6)+". . ."
-      else text = ""
-      setAddressText(text)
-    } else {
-      navigate('/login')
-    }
-  },[account])
+  
 
   const textAreaRef = useRef(null);
   const Settings=(props)=>{
@@ -47,6 +34,7 @@ export default function Sidebar() {
       </div>
     )
   }
+
 
   function copyToClipboard(e) {
     textAreaRef.current.select();
@@ -69,7 +57,7 @@ export default function Sidebar() {
      
       <div className='sidebar__header'>
       <div className="row g-0" style={{textAlign: "center",paddingLeft: "95px",paddingTop:'30px'}}>
-      <img className="rounded-circle " src={<Blockie address={account} size={1} />} style={{ gridRowStart:"2", width: "90px",
+      <img className="rounded-circle " src={<Blockie address={address} size={1} />} style={{ gridRowStart:"2", width: "90px",
     height: "90px",
     borderRadius: "50%",
     overflow: "hidden",
@@ -81,7 +69,7 @@ export default function Sidebar() {
           
          
           style={{overflow:"hidden",width:"100px",color:"white",fontSize:'14px'}}
-        >{addressText}</div></div>
+        >{address}</div></div>
       
     <Settings>Hello</Settings>
     <span style={{display: "grid",

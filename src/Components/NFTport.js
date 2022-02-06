@@ -1,13 +1,39 @@
 import "./assets/css/NFT.css";
 import polygon from "./assets/images/Nftport.svg";
+import {} from "node-fetch"
+import { useState } from "react";
 
 export default function NFT() {
+  const [nfts, setNFTs] = useState()
+
     const address="0xD3998D9993B3310C8F739694C97103A5770dbB2E"
     function PublicAddress(event){
       const text= address.substring(0,6)+". . ."
       console.log(text)
       return(<>{text}</>)
       }
+
+      const NFT_PORT_AUTH_KEY = '15ca99ab-92b8-442a-a95f-f114cfa49cf5';
+
+
+    const fetchNFTs = () => {
+      let url = `https://api.nftport.xyz/v0/accounts/${address}`;
+
+      let options = {
+        method: 'GET',
+        qs: {chain: 'ethereum'},
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${NFT_PORT_AUTH_KEY}`
+        }
+      };
+
+      fetch(url, options)
+        .then(res => setNFTs((res.json()).nfts))
+        .then(json => console.log(json))
+        .catch(err => console.error('error:' + err));
+    }
+
     return(
 
 <div className="NFT">
