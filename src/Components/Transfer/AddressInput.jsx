@@ -81,10 +81,12 @@ function AddressInput(props) {
   );
 
   return (
-    <Input
+    <input
+    style={{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent',color:"white",fontSize:"20px"
+    }}
       ref={input}
-      size="large"
-      placeholder={props.placeholder ? props.placeholder : "Public address"}
+     
+      
       prefix={
         isDomain || address.length === 42 ? (
           <Blockie
@@ -106,12 +108,8 @@ function AddressInput(props) {
       onChange={(e) => {
         updateAddress(e.target.value);
       }}
-      disabled={validatedAddress}
-      style={
-        validatedAddress
-          ? { ...props?.style, border: "1px solid rgb(33, 191, 150)" }
-          : { ...props?.style },{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent'
-      }}
+    
+     
     />
   );
 }

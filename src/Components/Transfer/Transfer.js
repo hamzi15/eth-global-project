@@ -6,6 +6,7 @@ import { useMoralis } from "react-moralis";
 import AddressInput from "./AddressInput";
 import AssetSelector from "./AssetSelector";
 import Result from "./Result";
+import { SearchOutlined } from "@ant-design/icons";
 
 const styles = {
   card: {
@@ -132,14 +133,14 @@ function Transfer() {
         <div style={styles.select}>
           <div style={{padding:"20px", textAlign:"center",color:"white",fontSize:"26px"}}>
             <Text strong>Address:</Text>
-          </div>
+          </div><br/><SearchOutlined style={{color:"white",padding:"20px"}}/>
           <AddressInput autoFocus onChange={setReceiver} />
         </div>
         <div style={styles.select}>
           <div style={{padding:"20px", textAlign:"center",color:"white",fontSize:"26px"}}>
             <Text strong>Amount:</Text>
           </div><br/><CreditCardOutlined style={{color:"white", padding:"20px"}}/>
-          <input style={{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent'}}
+          <input style={{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent',color:"white",fontSize:"20px"}}
             size="large"
            
             onChange={(e) => {

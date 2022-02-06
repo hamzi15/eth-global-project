@@ -40,7 +40,7 @@ export default function AssetSelector({ setAsset, style }) {
   }
 
   return (
-    <select onChange={handleChange} size="large" style={{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent',color:"white",width:"200px",fontSize:"23px"}}>
+    <select onChange={handleChange} size="large" style={{borderLeft:"none",borderRight:"none",borderTop:"none",borderBlockColor:"white",backgroundColor:'transparent',color:"white",width:"255px",fontSize:"23px"}}>
        <option
               value="token"
               
