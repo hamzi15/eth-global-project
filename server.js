@@ -12,7 +12,8 @@ const io = require('socket.io')(server, {
   cors: {
     origins: [
       'http://localhost:3000',
-      'http://localhost:3001'
+      'http://localhost:3001',
+      'https://www.app.sabhi.org',
     ],
     methods: ['GET', 'POST',],
   },
@@ -70,7 +71,7 @@ app.use(helmet());
 app.get('/', (req, res, next) => {
   return res.status(200).json({
     status: true,
-    message: 'Welcome to ETH Global Chat API',
+    message: 'Welcome to Eth Global! api',
     cheers: cool(),
     //  docs: `${process.env.BASE_URL}docs`,
   });
@@ -86,11 +87,37 @@ app.get('/', (req, res, next) => {
 
 const port = process.env.PORT || 9000;
 
-// initializing server 😻
+// initilizing server 😻
 server.listen(port, () =>
   console.log(`%s 🚀 Server is listening on port ${port} `, chalk.green('✓'))
 );
 
 
 require('./socket')(io);
+
+
+
+const { UserSchema } = require('./users');
+app.post('/user/add', async (req, res, next) => {
+  try {
+
+    const { userAddress } = req.body;
+    const user = new UserSchema({
+      userAddress: userAddress,
+    });
+
+    const data = await user.save();
+
+    return res.json({
+      success: true,
+      data: data,
+    });
+
+  } catch (error) {
+    return res.json({
+      success: false,
+      message: 'something went wrong!',
+    })
+  }
+})
 
